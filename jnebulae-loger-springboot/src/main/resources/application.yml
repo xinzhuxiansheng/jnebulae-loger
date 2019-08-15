@@ -1,0 +1,38 @@
+#配置端口和path路径
+server:
+  port: 8851
+  session:
+    tracking-modes: cookie
+  servlet-path: /
+  max-http-header-size: 1048576
+  tomcat:
+    max-connections: 3000
+    max-http-post-size: 1048576
+    max-threads: 1000
+  
+  
+#配置当前profiles
+spring:
+  profiles:
+    active: standalone
+  mvc:
+    throw-exception-if-no-handler-found: true
+  application:
+    name: springboot-microserviceA
+  #cloud:
+  #  config:
+  #    uri: http://localhost:8831
+
+#配置日志
+logging:
+  config: classpath:log4j2.xml
+ 
+
+#配置server eureka
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8843/eureka/,http://localhost:8844/eureka/
+#  instance:
+#    prefer-ip-address: true
+#    ip-address: 127.0.0.1
